@@ -1,0 +1,7 @@
+.list a:hover,
+.list a.active {
+  color: var(--color-lab-accent);
+  text-shadow: 2px 3px var(--color-lab-glitch);
+  border-bottom: 2px solid var(--color-lab-accent);
+  padding-bottom: 0.05rem;
+}

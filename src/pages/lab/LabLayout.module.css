@@ -1,0 +1,20 @@
+.labContainer{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    'sidebar title'
+    'sidebar main';
+}
+
+.labContainer main{
+    grid-area: main;
+}
+
+.title{
+    grid-area: title;
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
