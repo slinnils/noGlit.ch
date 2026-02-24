@@ -5,9 +5,10 @@ import Blog from "./pages/Blog.jsx";
 import RootLayout from "./pages/root-layout/RootLayout.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import LabLayout from "./pages/lab/LabLayout.jsx";
+import LabComponent from "./pages/lab/LabComponent.jsx";
+import ExperimentPlaceholder from "./pages/lab/ExperimentPlaceholder.jsx";
 
-function App() {
-  const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
       path: "",
       element: <RootLayout />,
@@ -21,8 +22,10 @@ function App() {
           path: "laboratory",
           element: <LabLayout />,
           children: [
+            { index: true, element: <ExperimentPlaceholder /> },
             {
               path: ":component",
+              element: <LabComponent />,
             },
           ],
         },
@@ -33,6 +36,9 @@ function App() {
       ],
     },
   ]);
+
+function App() {
+  
 
   return (
     <div className="h-dvh w-full bg-lab-black">

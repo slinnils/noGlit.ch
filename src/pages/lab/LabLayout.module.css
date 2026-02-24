@@ -9,6 +9,7 @@
 
 .labContainer main{
     grid-area: main;
+    align-self: center;
 }
 
 .title{

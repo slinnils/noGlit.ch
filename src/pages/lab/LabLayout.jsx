@@ -9,6 +9,7 @@ export default function LabLayout() {
         <LabSideBar />
       </div>
 
+    
       <h2 className={`ml-10 text-2xl justify-self-center ${classes.title}`}>Das ist der Titel der Komponente</h2>
       <main>
         <Outlet />
