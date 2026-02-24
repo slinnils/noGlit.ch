@@ -17,7 +17,7 @@ export default function Ref(){
     
   return (
       
-    <div id="app">
+    <div className='card'>
       <h3 className='text-xl text-stone-200'>Please select an image</h3>
       <p>
         <input ref={imgInput} data-testid="file-picker" type="file" accept="image/*" style={{display: displayed ? 'none' : ''}}/>

@@ -13,7 +13,7 @@ export default function Counter() {
   }
 
   return (
-    <div>
+    <div className="card">
       <CounterSection
         value={counter}
         onIncrement={handleIncrement}

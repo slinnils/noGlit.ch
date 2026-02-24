@@ -8,15 +8,12 @@ export default function IntersectingStateProblem() {
   }
 
   return (
-    <>
-      
-      <section className="text-stone-300 flex flex-col">
+      <section className="text-lab-text-main flex flex-col card">
         <button className="my-5" onClick={handleClick}>
           {isEditing ? "Edit" : "Save"}
         </button>
 
         <p>Editing mode: {isEditing ? "OFF" : "ON"}</p>
       </section>
-    </>
   );
 }

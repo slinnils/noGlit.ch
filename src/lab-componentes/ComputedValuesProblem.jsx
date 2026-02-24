@@ -20,17 +20,17 @@ export default function ComputedValuesProblem() {
   const total = price * amount;
 
   return (
-    <section className="text-[#D1F8EF] bg-[#3674B5] rounded-2xl p-5">
+    <section className="card">
       <h2>Fix Unnecessary State</h2>
 
       <div className="flex flex-col gp-3">
         <label>Price:</label>
-        <input className="bg-[#103358] py-2 px-5 rounded-2xl" type="number" value={price} onChange={handlePriceChange} />
+        <input type="number" value={price} onChange={handlePriceChange} />
       </div>
 
       <div className="flex flex-col gp-3 my-5">
         <lable>Amount:</lable>
-        <input className="bg-[#103358] py-2 px-5 rounded-2xl" type="number" value={amount} onChange={handleAmountChange} />
+        <input type="number" value={amount} onChange={handleAmountChange} />
       </div>
 
       <p>Total: {total} CHF</p>
