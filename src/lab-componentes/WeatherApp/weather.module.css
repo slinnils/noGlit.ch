@@ -29,7 +29,7 @@
 
 .mainWeather h1 {
   font-size: 2rem;
-  color: antiquewhite;
+  color: var(--color-lab-text-bright);
   grid-area: header;
 }
 
@@ -41,23 +41,27 @@
   position: relative;
 }
 
-.searchBar img{
-    height: 15px;
-    position: absolute;
-    margin-left: 0.5rem;
+.searchBar img {
+  height: 15px;
+  position: absolute;
+  margin-left: 0.5rem;
 }
 
 .searchBar input {
   margin-right: 1rem;
   padding: 0.5rem 1rem 0.5rem 2rem;
   width: max(220px, 80%);
-  background-color: rgb(51, 55, 255);
+  background-color: var(--color-lab-surface);
+  border: 1px solid var(--color-lab-accent);
+  box-shadow:
+    0 0 25px rgba(0, 243, 255, 0.4),
+    inset 0 0 10px rgba(0, 243, 255, 0.2);
   border-radius: 5px;
 }
 
 .title {
   margin: 0 0 0.8rem 0;
-  color: bisque;
+  color: var(--color-lab-text-bright);
 }
 
 .locationForecast {
@@ -72,7 +76,7 @@
 }
 
 .locationForecast > h2 {
-  color: bisque;
+  color: var(--color-lab-text-bright);
   font-size: 2rem;
 }
 
@@ -81,7 +85,7 @@
 }
 
 .localTemp {
-  color: bisque;
+  color: var(--color-lab-text-bright);
   font-size: 6rem;
 }
 
@@ -96,7 +100,7 @@
   left: 0;
   top: 0;
   z-index: -1;
-  background-image: url("../../assets/weather-app-assets/bg-today-large.svg");
+  background-image: url("../../assets/weather-app/bg-today-large.svg");
   border-radius: 15px;
   width: 100%;
   height: 100%;
@@ -115,9 +119,13 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  background-color: bisque;
+  background-color: var(--color-lab-surface);
   padding: 1rem 1rem;
   border-radius: 15px;
+  border: 1px solid var(--color-lab-accent);
+  box-shadow:
+    0 0 25px rgba(0, 243, 255, 0.4),
+    inset 0 0 10px rgba(0, 243, 255, 0.2);
 }
 
 .dataCard span {
@@ -136,7 +144,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: bisque;
+  background-color: var(--color-lab-surface);
   padding: 0.5rem 1rem;
   border-radius: 5px;
 }
@@ -151,9 +159,9 @@
   justify-content: space-between;
 }
 
-.placeholder{
+.placeholder {
   font-size: 3rem;
-  color: bisque;
+  color: var(--color-lab-surface);
 }
 
 /*.placeholderCard {
@@ -191,16 +199,20 @@
 }*/
 
 .hourlyForecast {
-  background-color: rgb(43, 43, 158);
+  background-color: var(--color-lab-surface);
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  color: bisque;
+  color: var(--color-lab-text-main);
   height: 100%;
   width: 100%;
   padding: 1rem 1rem;
   grid-area: hourly;
   border-radius: 15px;
+  border: 1px solid var(--color-lab-accent);
+  box-shadow:
+    0 0 25px rgba(0, 243, 255, 0.4),
+    inset 0 0 10px rgba(0, 243, 255, 0.2);
 }
 
 .hourlyForecast h2 {
@@ -208,9 +220,10 @@
 }
 
 .hourlyCards {
-  background-color: rgb(145, 152, 255);
-  border-radius: 10px;
-  padding: 0 0.5rem;
+  color: var(--color-lab-text-main);
+  background-color: var(--color-lab-surface);
+  border: 1px solid var(--color-lab-text-muted);
+  border-radius: 16px;
 }
 
 .hourlyForecast img {

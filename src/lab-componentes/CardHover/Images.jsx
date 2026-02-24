@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import classes from '../CardHover/hover.module.css'
 
 export default function Images() {
   const cardRef = useRef();
@@ -33,8 +34,6 @@ export default function Images() {
     else if (dir === "right") el.style.transform = "translateX(100%)";
     else if (dir === "top") el.style.transform = "translateY(-100%)";
     else el.style.transform = "translateY(100%)";
-
-    // Reflow erzwingen, damit der Startzustand wirklich "gesetzt" ist
     el.offsetHeight;
   }
 
@@ -75,7 +74,7 @@ export default function Images() {
       ref={cardRef}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      id="card-test"
+      className={classes.cardTest}
       style={{
         position: "relative",
         overflow: "hidden",
@@ -83,7 +82,7 @@ export default function Images() {
         width: 200,
       }}
     >
-      <div ref={overlayRef} id="overlay">
+      <div ref={overlayRef} className={classes.overlay}>
         <p className="text-stone-200 text-3xl">Das ist ein Bild</p>
         <button className="cursor-pointer py-1 px-3 bg-blue-400 rounded-md">
           Button

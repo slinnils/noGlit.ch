@@ -1,5 +1,5 @@
 import classes from "./weather.module.css";
-import weatherIconChange from "../../util/weatherIconChange.js";
+import weatherIconChange from "../WeatherApp/util/weatherIconChange.js";
 
 export default function HourlyForecast({ weather }) {
     if(!weather)return null

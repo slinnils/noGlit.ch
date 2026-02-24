@@ -1,5 +1,5 @@
 import SkillPointsSelector from "./SkillPointsSelector";
-import SkillContextProvider from "../../store/game-skill-context.jsx";
+import SkillContextProvider from "../../lab-componentes/GameSkillPoints/store/game-skill-context.jsx";
 
 export default function GameSkillPointsApp() {
 

@@ -25,7 +25,7 @@ export default function RootLayout() {
         <Outlet />
       </main>
 
-      <footer>
+      <footer className="mt-10">
         <p className="text-lab-text-muted">©2026 noGlit.ch</p>
       </footer>
     </div>

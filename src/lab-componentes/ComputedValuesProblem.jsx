@@ -21,14 +21,13 @@ export default function ComputedValuesProblem() {
 
   return (
     <section className="card">
-      <h2>Fix Unnecessary State</h2>
 
-      <div className="flex flex-col gp-3">
+      <div className="flex flex-col gap-2">
         <label>Price:</label>
         <input type="number" value={price} onChange={handlePriceChange} />
       </div>
 
-      <div className="flex flex-col gp-3 my-5">
+      <div className="flex flex-col gap-2 my-5">
         <lable>Amount:</lable>
         <input type="number" value={amount} onChange={handleAmountChange} />
       </div>

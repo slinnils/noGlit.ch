@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { fetchExperiments } from "../../../sanity/queries";
+import { fetchExperiments } from "../../sanity/queries";
 import { useEffect, useState } from "react";
-import classes from '../lab/Lab.module.css'
+import classes from './Lab.module.css'
 
 export default function ExperimentList() {
   const [experiments, setExperiments] = useState([]);

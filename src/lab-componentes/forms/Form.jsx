@@ -1,5 +1,6 @@
 import { useActionState } from "react";
 import { isEmail, isNotEmpty, doesMatch, isTooShort } from "./validations";
+import classes from '../forms/form.module.css'
 
 export default function Form() {
   function signupAction(prevFormState, formData) {
@@ -55,12 +56,14 @@ export default function Form() {
     errors: null,
   });
 
+  const tailwindClasses = 'flex flex-col my-4 w-full'
+
   return (
-    <div className="flex flex-col px-8 py-4 mt-7 rounded-2xl text-[#D1F8EF] bg-linear-to-bl from-[#0d2238] to-[#123458] shadow-xl shadow-stone-900">
+    <div className="flex flex-col px-8 py-4 mt-7 rounded-2xl card">
       <h1 className="mt-2">Welcome to my Website! Pleaser enter your Data.</h1>
 
       <form action={formAction} className="flex flex-col items-start">
-        <div className="test-input">
+        <div className={tailwindClasses}>
           <label>First name:</label>
           <input
             type="text"
@@ -69,7 +72,7 @@ export default function Form() {
           />
         </div>
 
-        <div className="test-input">
+        <div className={tailwindClasses}>
           <label>Last name:</label>
           <input
             type="text"
@@ -78,7 +81,7 @@ export default function Form() {
           />
         </div>
 
-        <div className="test-input">
+        <div className={tailwindClasses}>
           <label>Email address:</label>
           <input
             type="email"
@@ -87,7 +90,7 @@ export default function Form() {
           />
         </div>
 
-        <div className="test-input">
+        <div className={tailwindClasses}>
           <label>Password:</label>
           <input
             type="password"
@@ -96,7 +99,7 @@ export default function Form() {
           />
         </div>
 
-        <div className="test-input">
+        <div className={tailwindClasses}>
           <label>Confirm Password:</label>
           <input
             type="password"
@@ -105,7 +108,7 @@ export default function Form() {
           />
         </div>
 
-        <fieldset className="flex flex-col my-5 pl-4 border-2 border-[#d1f8ef] p-2 w-full">
+        <fieldset className="flex flex-col my-5 pl-4 border-2 border-lab-accent p-2 w-full">
           <legend><span className="mx-1">How did you find us?</span></legend>
           <div className="flex gap-6">
             <input
@@ -143,7 +146,7 @@ export default function Form() {
           </div>
         </fieldset>
 
-        <div className="control">
+        <div className={classes.control}>
           <label htmlFor="phone" className="text-[#d1f8ef];">What best describes your role?</label>
           <select
             id="role"
@@ -159,7 +162,7 @@ export default function Form() {
         </div>
 
         {formState.errors && (
-          <ul className="errors">
+          <ul className={classes.errors}>
             {formState.errors.map((error) => (
               <li key={error}>{error}</li>
             ))}

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import useFetchLocation from "../../hooks/useFetch.js";
+import useFetchLocation from './hooks/useFetch.js';
 import HourlyForecast from "./HourlyForecast.jsx";
 import LocationForecast from "./LocationForecast.jsx";
 import classes from "./weather.module.css";
 import WeatherForecast from "./WeatherForecast.jsx";
-import mag from "../../assets/weather-app-assets/icon-search.svg";
+import mag from "../../assets/icon-search.svg";
 
 export default function WeatherApp() {
   const [place, setPlace] = useState("");
@@ -13,7 +13,7 @@ export default function WeatherApp() {
     useFetchLocation();
 
   useEffect(() => {
-    fetchLocation(JSON.parse(localStorage.getItem("location") || "Berlin"));
+    fetchLocation(localStorage.getItem("location") || "berlin");
   }, []);
 
   function handlePlaceInput(event) {
@@ -42,7 +42,7 @@ export default function WeatherApp() {
           onClick={() => {
             fetchLocation(place);
             setPlace("");
-            localStorage.setItem("location", JSON.stringify(place));
+            localStorage.setItem("location", place);
           }}
         >
           Search

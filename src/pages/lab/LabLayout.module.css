@@ -1,15 +1,20 @@
 .labContainer{
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas: 
     'sidebar title'
-    'sidebar main';
+    'sidebar main'
+    'sidebar description';
 }
 
 .labContainer main{
     grid-area: main;
     align-self: center;
+}
+
+.labContainer .descriptionContainer{
+    justify-self: center;
 }
 
 .title{
@@ -19,3 +24,7 @@
 .sidebar{
     grid-area: sidebar;
 }
+
+.description{
+ grid-area: description;
+ }

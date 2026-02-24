@@ -1,5 +1,5 @@
 import classes from "./weather.module.css";
-import weatherIconChange from "../../util/weatherIconChange.js";
+import weatherIconChange from "../WeatherApp/util/weatherIconChange";
 
 export default function LocationForecast({ place, country, weather }) {
   if(!weather) return null
