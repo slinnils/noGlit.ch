@@ -3,8 +3,8 @@ import BlogPost from "./BlogPost.jsx";
 export default function Blog() {
   return (
     <section className="flex flex-col items-center gap-10">
-      <div className="w-[40vw] mb-10">
-        <h1 className="text-lab-text-bright text-5xl font-bold mb-5">
+      <div className="w-[90vw] md:w-[40vw] mb-10">
+        <h1 className="text-lab-text-bright text-[clamp(2rem,6vw,2.5rem)] font-bold mb-5">
           noGlit.ch Blog
         </h1>
         <p>

@@ -8,9 +8,7 @@
     "footer footer";
 }
 
-/*.rootLayout .navbar {
-  grid-area: navbar;
-}*/
+
 
 .rootLayout .header{
   grid-area: header;

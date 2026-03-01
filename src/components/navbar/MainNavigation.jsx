@@ -1,24 +1,55 @@
 import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
+import { useState } from "react";
 
 export default function MainNavigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function sideBar() {
+    setIsOpen((prev) => !prev);
+  }
+
   const getNavLinkClass = ({ isActive }) =>
     isActive ? `${classes.active} font-bold` : "text-lab-text-muted";
 
   return (
-    <nav className="ml-auto mr-20">
-      <ul className={`flex gap-10 text-xl ${classes.list}`}>
-        <li className="ml-10">
-          <NavLink className={getNavLinkClass} to={""} end>
+    <nav className="ml-auto mr-5 md:mr-20 relative">
+      <div onClick={sideBar} className="md:hidden">
+        <div className="text-lab-accent text-3xl cursor-pointer">
+          {isOpen ? "X" : "☰"}
+        </div>
+      </div>
+      <ul
+        className={`text-lab-text-bright ${isOpen ? "flex flex-col absolute top-full right-0 bg-lab-surface z-50 p-4 rounded-lg border border-lab-accent gap-4" : "hidden"} md:flex md:relative md:flex-row md:p-0 md:border-0 md:bg-transparent gap-10 text-xl ${classes.list}`}
+      >
+        <li className="md:ml-10">
+          <NavLink
+            onClick={() => setIsOpen(false)}
+            className={getNavLinkClass}
+            to={""}
+            end
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink className={getNavLinkClass} to={"laboratory"}>Laboratory</NavLink>
+          <NavLink
+            onClick={() => setIsOpen(false)}
+            className={getNavLinkClass}
+            to={"laboratory"}
+          >
+            Laboratory
+          </NavLink>
         </li>
         <li>
-          <NavLink className={getNavLinkClass} to={"blog"}>Blog</NavLink>
+          <NavLink
+            onClick={() => setIsOpen(false)}
+            className={getNavLinkClass}
+            to={"blog"}
+          >
+            Blog
+          </NavLink>
         </li>
       </ul>
     </nav>

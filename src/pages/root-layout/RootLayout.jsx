@@ -7,7 +7,7 @@ import classes from "./RootLayout.module.css";
 export default function RootLayout() {
   return (
     <div
-      className={`w-[clamp(300px,100vw,1800px)] h-full mx-auto ${classes.rootLayout}`}
+      className={`w-[clamp(300px,100vw,1800px)] h-screen mx-auto ${classes.rootLayout}`}
     >
    
 
@@ -15,7 +15,7 @@ export default function RootLayout() {
           <Header />
         </div>
 
-        <div className={`self-center ml-auto ${classes.nav}`}>
+        <div className={`self-end ml-auto ${classes.nav}`}>
           <MainNavigation />
         </div>
 

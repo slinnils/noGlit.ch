@@ -34,7 +34,7 @@ export default function BlogPost() {
   return (
     <>
       {blogPosts.map((post) => (
-        <div key={post._id} className="card flex flex-col gap-2 w-[50%]">
+        <div key={post._id} className="card flex flex-col gap-2 w-[90%] md:w-[50%]">
           <p className="text-lab-text-bright text-2xl font-semibold">{post.title}</p>
           <p className="text-lab-text-muted">
             {new Intl.DateTimeFormat("de-CH", options).format(

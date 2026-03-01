@@ -1,30 +1,73 @@
-.labContainer{
-    display: grid;
+.labContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "hamburger"
+    "title"
+    "main"
+    "description";
+  position: relative;
+}
+
+.hamburger {
+  grid-area: hamburger;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+  transform: translateX(-110%);
+  transition: transform 0.3s ease;
+  background-color: var(--color-lab-black);
+  overflow-y: auto;
+  padding-bottom: 2rem;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.labContainer main {
+  grid-area: main;
+  align-self: center;
+}
+
+.labContainer .descriptionContainer {
+  justify-self: center;
+}
+
+.title {
+  grid-area: title;
+  overflow-wrap: break-word;
+}
+
+.description {
+  grid-area: description;
+}
+
+
+@media (min-width: 768px) {
+  .labContainer {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr 1fr;
-    grid-template-areas: 
-    'sidebar title'
-    'sidebar main'
-    'sidebar description';
-}
+    grid-template-areas:
+      "sidebar title"
+      "sidebar main"
+      "sidebar description";
+  }
 
-.labContainer main{
-    grid-area: main;
-    align-self: center;
-}
+  .hamburger {
+    display: none;
+  }
 
-.labContainer .descriptionContainer{
-    justify-self: center;
-}
-
-.title{
-    grid-area: title;
-}
-
-.sidebar{
+  .sidebar {
+    position: static;
+    transform: none;
+    transition: none;
     grid-area: sidebar;
+  }
 }
-
-.description{
- grid-area: description;
- }
