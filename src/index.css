@@ -49,6 +49,8 @@ button,
   padding: 0.6rem 2rem;
   border-radius: 6px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

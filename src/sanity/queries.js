@@ -20,3 +20,12 @@ export async function fetchExperimentBySlug(slug) {
     { slug },
   );
 }
+
+export async function fetchBlogPosts() {
+  return await client.fetch(`*[_type == "blogPost"]{
+    title,
+    "slug": slug.current,
+    date,
+    description
+    }| order(date desc)`);
+}
