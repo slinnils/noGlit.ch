@@ -5,8 +5,8 @@ export default function Homepage() {
   return (
     <div className="flex flex-col items-center bg-lab-surface py-12 px-7 md:mt-30 rounded-2xl mx-2 w-[clamp(330px,60vw,1000px)]">
       <img className="h-40 w-40" src={logo} alt="" />
-      <h2 className="mb-5 text-2xl text-lab-text-bright text-center font-semibold">Wilkommen in meinem Labor!</h2>
-      <p className="text-center text-lab-text-main">
+      <h2 className="mb-5 text-[clamp(1.2rem,5vw,2rem)] text-lab-text-bright text-center font-semibold">Wilkommen in meinem Labor!</h2>
+      <p className="text-center text-[clamp(0.8rem,3vw,1.5rem)] text-lab-text-main">
         noGlit.ch ist mein persönliches React-Labor. Hier experimentiere ich mit
         modernen Web-Technologien und entwickle eine eigene Bibliothek aus
         modularen UI-Komponenten. Dieses Projekt dient mir als kreativer

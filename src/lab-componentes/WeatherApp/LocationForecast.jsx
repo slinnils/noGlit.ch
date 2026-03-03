@@ -10,7 +10,7 @@ export default function LocationForecast({ place, country, weather }) {
         <h2 className={classes.locationHeader}>
           {place}, {country}
           <br />
-          <span>{date.toLocaleDateString("de-CH")}</span>
+          <span>{date.toLocaleDateString("de-CH", )}</span>
         </h2>
 
         <img src={weatherIconChange(weather.weather_code)} alt="" />

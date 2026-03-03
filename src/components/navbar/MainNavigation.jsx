@@ -21,7 +21,7 @@ export default function MainNavigation() {
         </div>
       </div>
       <ul
-        className={`text-lab-text-bright ${isOpen ? "flex flex-col absolute top-full right-0 bg-lab-surface z-50 p-4 rounded-lg border border-lab-accent gap-4" : "hidden"} md:flex md:relative md:flex-row md:p-0 md:border-0 md:bg-transparent gap-10 text-xl ${classes.list}`}
+        className={`${classes.mobileMenu} ${isOpen ? classes.menuOpen : ""} md:flex md:relative md:flex-row md:p-0 md:border-0 md:bg-transparent gap-10 text-xl ${classes.list}`}
       >
         <li className="md:ml-10">
           <NavLink

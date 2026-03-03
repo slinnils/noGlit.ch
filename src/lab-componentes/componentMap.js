@@ -1,25 +1,15 @@
-import IntersectingStateProblem from "./AvoidIntersectingStates/IntersectingStatesProblem.jsx";
-import ComputedValuesProblem from './ComputedValuesProblem.jsx'
-import Counter from "./Counter/Counter.jsx";
-import MiniToDo from "./MiniToDo/MiniToDo.jsx";
-import GameSkillPointsApp from './GameSkillPoints/GameSkillPointsApp.jsx'
-import Timeout from './Timeout.jsx'
-import ModalApp from './Modal/ModalApp.jsx'
-import Maps from './Maps.jsx'
-import CardHoverFx from './CardHover/CardHoverFx.jsx'
-import Form from './forms/Form.jsx'
-import WeatherApp from './WeatherApp/WeatherApp.jsx'
+import { lazy } from "react";
 
 export const componentMap = {
-  stateUpdateCallback: IntersectingStateProblem,
-  ComputedValues: ComputedValuesProblem,
-  counter: Counter,
-  todo: MiniToDo,
-  GameSkillPointsApp: GameSkillPointsApp,
-  timeout: Timeout,
-  modal: ModalApp,
-  maps: Maps,
-  cardHover: CardHoverFx,
-  forms: Form,
-  weather: WeatherApp,
+  stateUpdateCallback: lazy(() => import("./AvoidIntersectingStates/IntersectingStatesProblem.jsx")),
+  ComputedValues: lazy(() => import("./ComputedValuesProblem.jsx")),
+  counter: lazy(() => import("./Counter/Counter.jsx")),
+  todo: lazy(() => import("./MiniToDo/MiniToDo.jsx")),
+  GameSkillPointsApp: lazy(() => import("./GameSkillPoints/GameSkillPointsApp.jsx")),
+  timeout: lazy(() => import("./Timeout.jsx")),
+  modal: lazy(() => import("./Modal/ModalApp.jsx")),
+  maps: lazy(() => import("./Maps.jsx")),
+  cardHover: lazy(() => import("./CardHover/CardHoverFx.jsx")),
+  forms: lazy(() => import("./forms/Form.jsx")),
+  weather: lazy(() => import("./WeatherApp/WeatherApp.jsx")),
 };

@@ -7,7 +7,7 @@ import classes from "./RootLayout.module.css";
 export default function RootLayout() {
   return (
     <div
-      className={`overflow-hidden w-[clamp(90vw,98vw,1800px)] min-h-dvh mx-auto ${classes.rootLayout}`}
+      className={`w-[clamp(90vw,98vw,1800px)] h-dvh mx-auto ${classes.rootLayout}`}
     >
    
         <div className={classes.header}>
@@ -20,7 +20,7 @@ export default function RootLayout() {
 
       
 
-      <main className="mt-5">
+      <main>
         <Outlet />
       </main>
 

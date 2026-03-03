@@ -11,7 +11,7 @@ export default function LabLayout() {
 
   return (
     <div
-      className={`h-full w-full md:w-[clamp(600px,98vw,1800px)] ${classes.labContainer}`}
+      className={` h-full w-full md:w-[clamp(600px,98vw,1800px)] ${classes.labContainer}`}
     >
       <button
         onClick={() => setSidebarOpen((prev) => !prev)}

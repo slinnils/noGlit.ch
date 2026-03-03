@@ -1,20 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { componentMap } from "../../lab-componentes/componentMap";
-import { fetchExperimentBySlug } from "../../sanity/queries";
-import { use, useEffect, useState } from "react";
+import { use, useEffect } from "react";
 import { ExperimentContext } from "./store/experiments-context";
+import { Suspense } from "react";
 
 export default function LabComponent() {
-  const { component } = useParams();
-  const [experiment, setExperiment] = useState(null);
+  const experiment = useLoaderData();
   const { setCurrentExperiment } = use(ExperimentContext);
 
   useEffect(() => {
-    fetchExperimentBySlug(component).then((data) => {
-      setExperiment(data);
-      setCurrentExperiment(data);
-    });
-  }, [component, setCurrentExperiment]);
+    setCurrentExperiment(experiment);
+  }, [experiment, setCurrentExperiment]);
 
   const Component = experiment ? componentMap[experiment.componentKey] : null;
 
@@ -23,7 +19,9 @@ export default function LabComponent() {
 
   return (
     <div className="md:ml-10">
-      <Component />
+      <Suspense>
+        <Component />
+      </Suspense>
     </div>
   );
 }

@@ -1,12 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Homepage from "./pages/Homepage.jsx";
-import Blog from './pages/blog/Blog.jsx'
+import { lazy, Suspense } from "react";
 import RootLayout from "./pages/root-layout/RootLayout.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
-import LabLayout from "./pages/lab/LabLayout.jsx";
 import LabComponent from "./pages/lab/LabComponent.jsx";
 import ExperimentPlaceholder from "./components/lab/ExperimentPlaceholder.jsx";
+import { fetchExperimentBySlug } from "./sanity/queries.js";
+
+const Homepage = lazy(() => import("./pages/Homepage.jsx"));
+const Blog = lazy(() => import("./pages/blog/Blog.jsx"));
+const LabLayout = lazy(() => import("./pages/lab/LabLayout.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -22,10 +25,14 @@ const router = createBrowserRouter([
         path: "laboratory",
         element: <LabLayout />,
         children: [
-          { index: true, element: <ExperimentPlaceholder /> },
+          {
+            index: true,
+            element: <ExperimentPlaceholder />,
+          },
           {
             path: ":component",
             element: <LabComponent />,
+            loader: ({ params }) => fetchExperimentBySlug(params.component),
           },
         ],
       },
@@ -39,9 +46,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="min-h-dvh bg-lab-black">
-      <RouterProvider router={router} />
-    </div>
+    <Suspense fallback={<p className="text-lab-text-muted">Lädt...</p>}>
+    <RouterProvider router={router} />
+  </Suspense>
   );
 }
 

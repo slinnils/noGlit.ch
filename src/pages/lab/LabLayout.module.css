@@ -10,6 +10,7 @@
   position: relative;
 }
 
+
 .hamburger {
   grid-area: hamburger;
 }
@@ -32,7 +33,6 @@
 
 .labContainer main {
   grid-area: main;
-  align-self: center;
 }
 
 .labContainer .descriptionContainer {
@@ -52,7 +52,7 @@
 @media (min-width: 768px) {
   .labContainer {
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       "sidebar title"
       "sidebar main"
