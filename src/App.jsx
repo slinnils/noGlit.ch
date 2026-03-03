@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Suspense fallback={<p className="text-lab-text-muted">Lädt...</p>}>
+    <Suspense>
     <RouterProvider router={router} />
   </Suspense>
   );
