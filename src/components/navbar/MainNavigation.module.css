@@ -25,6 +25,7 @@
 @media (min-width: 768px) {
   .mobileMenu {
     opacity: 1;
+  flex-direction: row;
     transform: none;
     pointer-events: auto;
     position: relative;
