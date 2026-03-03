@@ -19,10 +19,10 @@ export default function LabComponent() {
   const Component = experiment ? componentMap[experiment.componentKey] : null;
 
   if (!Component)
-    return <p className="text-white ml-10">Komponente nicht gefunden.</p>;
+    return <p className="text-white md:ml-10">Komponente nicht gefunden.</p>;
 
   return (
-    <div className="ml-10">
+    <div className="md:ml-10">
       <Component />
     </div>
   );

@@ -1,34 +1,37 @@
 .mainWeather {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(400px, 800px) minmax(200px, 300px);
-  grid-template-rows: 0.8fr auto minmax(250px, 25%) 0.8fr 1fr;
+  gap: 1rem;
+  grid-template-columns: minmax(300px, 800px);
   grid-template-areas:
-    "header header"
-    "searchbar searchbar"
-    "location hourly"
-    "forecast-details hourly"
-    "daily hourly";
-  justify-items: center;
+    "header"
+    "searchbar"
+    "location"
+    "forecast-details"
+    "daily"
+    "hourly";
   width: 100%;
+  padding: 0 0.5rem;
+  overflow-x: hidden;
 }
 
-@media (min-width: 319px) and (max-width: 480px) {
+@media (min-width: 1349px) {
   .mainWeather {
-    grid-template-columns: 1fr;
+    gap: 2rem;
+    grid-template-columns: 1fr minmax(auto, 280px);
+    grid-template-rows: auto auto minmax(250px, 25%) 0.8fr 1fr;
     grid-template-areas:
-      "header"
-      "searchbar"
-      "location"
-      "forecast-details"
-      "forecast-details"
-      "daily"
-      "hourly";
+      "header header"
+      "searchbar searchbar"
+      "location hourly"
+      "forecast-details hourly"
+      "daily hourly";
+    padding: 0;
+    justify-items: center;
   }
 }
 
 .mainWeather h1 {
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 4vw, 2rem);
   color: var(--color-lab-text-bright);
   grid-area: header;
 }
@@ -36,9 +39,15 @@
 .searchBar {
   display: flex;
   align-items: center;
-  width: clamp(230px, 50vw, 700px);
+  width: 100%;
   grid-area: searchbar;
   position: relative;
+}
+
+@media (min-width: 1349px) {
+  .searchBar {
+    width: clamp(230px, 50vw, 700px);
+  }
 }
 
 .searchBar img {
@@ -50,7 +59,7 @@
 .searchBar input {
   margin-right: 1rem;
   padding: 0.5rem 1rem 0.5rem 2rem;
-  width: max(220px, 80%);
+  width: 100%;
   background-color: var(--color-lab-surface);
   border: 1px solid var(--color-lab-accent);
   box-shadow:
@@ -68,29 +77,37 @@
   display: grid;
   align-items: center;
   position: relative;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   width: 100%;
   height: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem;
   grid-area: location;
+  border-radius: 15px;
+}
+
+@media (min-width: 1349px) {
+  .locationForecast {
+    grid-template-columns: 1fr auto auto;
+    padding: 1rem 2rem;
+  }
 }
 
 .locationForecast > h2 {
   color: var(--color-lab-text-bright);
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 4vw, 2rem);
 }
 
 .locationForecast span {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 .localTemp {
   color: var(--color-lab-text-bright);
-  font-size: 6rem;
+  font-size: clamp(3rem, 10vw, 6rem);
 }
 
 .locationForecast img {
-  width: 100px;
+  width: clamp(60px, 15vw, 100px);
   margin-left: auto;
 }
 
@@ -100,7 +117,7 @@
   left: 0;
   top: 0;
   z-index: -1;
-  background-image: url("../../assets/weather-app/bg-today-large.svg");
+  background-image: url("../../assets/weather-app/weather-app-assets/bg-today-large.svg");
   border-radius: 15px;
   width: 100%;
   height: 100%;
@@ -108,19 +125,34 @@
 
 .locationForecastDetails {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  height: 100%;
-  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 80%;
+  justify-self: center;
   grid-area: forecast-details;
+}
+
+@media (max-width: 400px) {
+  .locationForecastDetails {
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1349px) {
+  .locationForecastDetails {
+    grid-template-columns: repeat(4, 1fr);
+    justify-self: center;
+    gap: 2rem;
+  }
 }
 
 .dataCard {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
+  width: 150px;
   background-color: var(--color-lab-surface);
-  padding: 1rem 1rem;
+  padding: 0.75rem;
   border-radius: 15px;
   border: 1px solid var(--color-lab-accent);
   box-shadow:
@@ -128,16 +160,37 @@
     inset 0 0 10px rgba(0, 243, 255, 0.2);
 }
 
+@media (min-width: 1349px) {
+  .dataCard {
+    padding: 1rem;
+  }
+}
+
 .dataCard span {
   margin-top: auto;
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.dailyWrapper {
+  grid-area: daily;
+  width: 100%;
 }
 
 .forecastSection {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
   gap: 0.9rem;
-  grid-area: forecast;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 1349px) {
+  .forecastSection {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
 }
 
 .forecastCard {
@@ -146,11 +199,20 @@
   align-items: center;
   background-color: var(--color-lab-surface);
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1349px) {
+  .forecastCard {
+    min-width: unset;
+    flex-shrink: 1;
+  }
 }
 
 .forecastCard img {
-  width: 80px;
+  width: clamp(50px, 10vw, 80px);
 }
 
 .minMaxTemp {
@@ -160,43 +222,9 @@
 }
 
 .placeholder {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
   color: var(--color-lab-surface);
 }
-
-/*.placeholderCard {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.5rem 0.7rem;
-  width: clamp(30px, 80px, 90px);
-  height: clamp(83px, 120px, 120px);
-  border-radius: 5px;
-  background-color: rgb(6, 0, 90);
-}
-
-.placeholderTitle {
-  background-color: rgb(94, 94, 94);
-  height: 16%;
-  width: 80%;
-  border-radius: 5px;
-}
-
-.placeholderImg {
-  width: 95%;
-  height: 50%;
-  background-color: rgb(94, 94, 94);
-  border-radius: 5px;
-}
-
-.placeholderTemp {
-  width: 95%;
-  height: 15%;
-  background-color: rgb(94, 94, 94);
-  border-radius: 5px;
-}*/
 
 .hourlyForecast {
   background-color: var(--color-lab-surface);
@@ -204,15 +232,25 @@
   flex-direction: column;
   gap: 0.8rem;
   color: var(--color-lab-text-main);
-  height: 100%;
+  height: auto;
   width: 100%;
-  padding: 1rem 1rem;
+  padding: 1rem;
   grid-area: hourly;
   border-radius: 15px;
   border: 1px solid var(--color-lab-accent);
   box-shadow:
     0 0 25px rgba(0, 243, 255, 0.4),
     inset 0 0 10px rgba(0, 243, 255, 0.2);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+@media (min-width: 1349px) {
+  .hourlyForecast {
+    height: 100%;
+    max-height: none;
+    place-self: center;
+  }
 }
 
 .hourlyForecast h2 {

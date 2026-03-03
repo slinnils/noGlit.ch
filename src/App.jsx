@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Homepage from "./pages/Homepage.jsx";
-import Blog from "./pages/blog/Blog.jsx";
+import Blog from './pages/blog/Blog.jsx'
 import RootLayout from "./pages/root-layout/RootLayout.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import LabLayout from "./pages/lab/LabLayout.jsx";
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="h-dvh w-full bg-lab-black">
+    <div className="min-h-dvh bg-lab-black">
       <RouterProvider router={router} />
     </div>
   );

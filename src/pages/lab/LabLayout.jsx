@@ -21,7 +21,7 @@ export default function LabLayout() {
       </button>
 
       <div
-        className={`ml-5 md:ml-0 ${classes.sidebar} ${sidebarOpen ? classes.sidebarOpen : ""}`}
+        className={`mx-5 my-5 pb-5 md:ml-0 ${classes.sidebar} ${sidebarOpen ? classes.sidebarOpen : ""}`}
       >
         <LabSideBar onNavigate={() => setSidebarOpen(false)} />
       </div>
@@ -30,10 +30,10 @@ export default function LabLayout() {
         <ExperimentTitle
           classes={`ml-10 mb-10 text-2xl justify-self-center pr-5 ${classes.title}`}
         />
-        <main className="mb-10 ml-10">
+        <main className="md:mb-10 mb-5 lg:px-2 lg:ml-10">
           <Outlet />
         </main>
-        <div className={`w-1/2 ${classes.descriptionContainer}`}>
+        <div className={`m-3 md:w-1/2 ${classes.descriptionContainer}`}>
           <ComponentDescription classes={classes.description} />
         </div>
       </ExperimentContextProvider>

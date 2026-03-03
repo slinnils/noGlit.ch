@@ -28,11 +28,11 @@ export default function MiniToDo() {
   }
 
   return (
-    <div className="flex flex-col gap-15 card">
+    <div className="flex flex-col gap-15 card w-[clamp(300px,50vw,600px)]">
       <div className="inner-card text-[#D1F8EF]">
         <h1>Mini To Do App</h1>
 
-        <div className="flex gap-7 ml-5 mt-5">
+        <div className="flex md:flex-row flex-col gap-2 lg:gap-7 lg:ml-5 mt-5">
           <div className="flex flex-col gap-3">
             <label>Enter Task</label>
             <input
@@ -51,7 +51,7 @@ export default function MiniToDo() {
           <button
             type="button"
             onClick={handleAddTask}
-            className="h-[50%] self-end empty-button"
+            className="self-end empty-button"
           >
             add
           </button>
@@ -62,12 +62,12 @@ export default function MiniToDo() {
         <h2>Tasks:</h2>
         <ul>
           {tasks.length === 0 ? (
-            <li className="text-2xl w-120 py-3 px-5 mt-5 ml-5 rounded-2xl">No Tasks yet</li>
+            <li className="md:text-2xl w-[clamp(100px,90%,300px)] py-3 px-5 mt-5 ml-5 rounded-2xl">No Tasks yet</li>
           ) : (
             tasks.map((task) => (
               <li
                 key={task.id}
-                className="inner-card flex items-baseline gap-3 w-120 mt-5 ml-5"
+                className="inner-card flex items-baseline gap-3 w-[clamp(220px,90%,300px)] mt-5 md:mx-5"
               >
                 <input
                   checked={task.done}

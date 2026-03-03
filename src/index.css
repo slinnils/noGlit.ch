@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   /* Hintergrund & Oberflächen */
   --color-lab-black: #0a0a0c;
@@ -78,6 +79,7 @@ button:hover,
 }
 
 .empty-button {
+  justify-content: center;
   background: rgba(0, 243, 255, 0.03); /* Ganz zarter Cyan-Schimmer */
   border: 1px solid rgba(0, 243, 255, 0.3); /* Transparente Akzentfarbe */
   padding: 0.6rem 2rem;
@@ -94,6 +96,7 @@ button:hover,
 
 @media (max-width: 600px) {
   .empty-button {
+    display: flex;
     padding: 0.2rem 0.5rem;
     font-weight: 530;
   }

@@ -3,7 +3,7 @@ import logo from "../assets/noGlitch_logo.png";
 
 export default function Homepage() {
   return (
-    <div className="flex flex-col items-center bg-lab-surface py-12 px-7 mt-30 rounded-2xl w-[clamp(300px,60vw,1000px)]">
+    <div className="flex flex-col items-center bg-lab-surface py-12 px-7 md:mt-30 rounded-2xl mx-2 w-[clamp(330px,60vw,1000px)]">
       <img className="h-40 w-40" src={logo} alt="" />
       <h2 className="mb-5 text-2xl text-lab-text-bright text-center font-semibold">Wilkommen in meinem Labor!</h2>
       <p className="text-center text-lab-text-main">

@@ -15,7 +15,7 @@ export default function ExperimentList({ onNavigate }) {
 
   return (
     <div className="flex">
-      <ul className="text-xl font-semibold text-[#D1F8EF] flex flex-col items-center w-full">
+      <ul className="text-[clamp(0.75rem,1.5vw,1.25rem)] font-semibold text-[#D1F8EF] flex flex-col items-center w-full">
         {experiments.map((exp) => (
           <li key={exp.slug} className="w-full flex justify-center mt-4">
             <NavLink
@@ -28,7 +28,12 @@ export default function ExperimentList({ onNavigate }) {
           </li>
         ))}
       </ul>
-        <button onClick={onNavigate} className="empty-button h-10 w-10 flex items-center justify-center md:hidden">✕</button>
+      <button
+        onClick={onNavigate}
+        className="empty-button h-10 w-10 flex items-center justify-center md:hidden"
+      >
+        ✕
+      </button>
     </div>
   );
 }

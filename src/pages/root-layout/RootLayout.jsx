@@ -7,10 +7,9 @@ import classes from "./RootLayout.module.css";
 export default function RootLayout() {
   return (
     <div
-      className={`w-[clamp(300px,100vw,1800px)] h-screen mx-auto ${classes.rootLayout}`}
+      className={`overflow-hidden w-[clamp(90vw,98vw,1800px)] min-h-dvh mx-auto ${classes.rootLayout}`}
     >
    
-
         <div className={classes.header}>
           <Header />
         </div>
@@ -25,7 +24,7 @@ export default function RootLayout() {
         <Outlet />
       </main>
 
-      <footer className="mt-10">
+      <footer className="md:mt-10 mt-auto">
         <p className="text-lab-text-muted">©2026 noGlit.ch</p>
       </footer>
     </div>
