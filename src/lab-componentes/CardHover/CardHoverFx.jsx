@@ -3,7 +3,7 @@ import Images from "./Images";
 export default function CardHoverFx() {
   
   return (
-    <div className="grid grid-cols-2 gap-9 justify-center flex-wrap items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-9 justify-center flex-wrap items-center">
       
       <Images />
       <Images />
